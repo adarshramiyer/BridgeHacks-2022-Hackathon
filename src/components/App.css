@@ -29,8 +29,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: top;
   font-size: calc(10px + 2vmin);
   color: #000000;
 }
@@ -41,7 +41,7 @@
   position: sticky;
   align-items: center;
   justify-content:stretch;
-  box-shadow: 0px 2px 5px #aaaaaa;
+  box-shadow: 0px 5px 10px #999999;
   font-family: RalewayLight;
   font-size: 50px;
 }
@@ -49,13 +49,45 @@
 .App-header-list {
   text-align: left;
   display: inline-block;
+  margin-top: 0px;
+}
+
+.App-header-account {
+  text-align: left;
+  display: inline-block;
+  padding-left: 44vw;
+  margin-top: 0px;
+  padding-bottom: 0px;
+}
+
+.header-account {
+  color: #1fb58f;
+  font-size: 25px;
+
+  font-family: RalewayLight;
+  padding-left: 195px;
+}
+
+.header-account:hover {
+  color: #069c76;
+  font-size: 25px;
+  font-family: RalewayLight;
+  padding-left: 195px;
 }
 
 .header-links {
+  color: #444444;
+  font-size: 25px;
+  font-family: RalewayLight;
+  padding-left: 40px;
+}
+
+.header-links:hover {
   color: #000000;
   font-size: 25px;
   font-family: RalewayLight;
-  padding-left: 20px;
+  padding-left: 40px;
+  text-decoration: none;
 }
 
 .logo-text {
@@ -63,8 +95,8 @@
   font-size: 70px;
   font-family: Montserrat;
   padding-left: 0px;
-  padding-bottom: 10px;
-  padding-top: 20px;
+  padding-bottom: 0px;
+  padding-top: 0px;
   font-weight: 900;
 }
 
@@ -73,16 +105,31 @@
   font-size: 70px;
   font-family: Montserrat;
   padding-left: 0px;
-  padding-bottom: 10px;
-  padding-top: 20px;
+  padding-bottom: 0px;
+  padding-top: 0px;
   font-weight: 900;
   text-decoration: none;
 }
 
 .App-footer {
   background-color: #1fb58f;
-  left: 0;
-  bottom: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color:#ffffff;
+  font-family: RalewayLight;
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.footer-table {
+  text-align: center;
+  width: 100vmax;
+}
+
+.White-logo {
+  filter: grayscale(100%) brightness(300%);
 }
 
 

@@ -9,8 +9,9 @@ function Game() {
   }, [postSlug]);
 
   return (
+    <background className = "App-background">
     <div className="home">
-      <div class="container">
+      <div className="container">
         <h1 className="mt-5">This is Game JS</h1>
         <h6 className="mb-5">The slug is, {postSlug}</h6>
         <p>
@@ -24,6 +25,7 @@ function Game() {
         </p>
       </div>
     </div>
+    </background>
   );
 }
 
