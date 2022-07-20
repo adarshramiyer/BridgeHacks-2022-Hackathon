@@ -1,3 +1,20 @@
+@font-face {
+  font-family: Montserrat;
+  src: url("./Montserrat-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: RalewayLight;
+  src: url("./Raleway-VariableFont_wght.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url("./Raleway-VariableFont_wght.ttf");
+  font-weight: 500;
+}
+
 .App {
   text-align: center;
 }
@@ -7,14 +24,8 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #eab126;
+.App-background {
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +35,58 @@
   color: #000000;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  left: 0;
+  top: 0;
+  position: sticky;
+  align-items: center;
+  justify-content:stretch;
+  box-shadow: 0px 2px 5px #aaaaaa;
+  font-family: RalewayLight;
+  font-size: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-header-list {
+  text-align: left;
+  display: inline-block;
+}
+
+.header-links {
+  color: #000000;
+  font-size: 25px;
+  font-family: RalewayLight;
+  padding-left: 20px;
+}
+
+.logo-text {
+  color: #1b7834;
+  font-size: 70px;
+  font-family: Montserrat;
+  padding-left: 0px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  font-weight: 900;
+}
+
+.logo-text:hover {
+  color: #116e2a;
+  font-size: 70px;
+  font-family: Montserrat;
+  padding-left: 0px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.App-footer {
+  background-color: #1fb58f;
+  left: 0;
+  bottom: 100vh;
+}
+
+
+
+.App-link {
+  color: #61dafb;
 }

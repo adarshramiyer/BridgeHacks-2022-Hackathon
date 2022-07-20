@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/src/components/Montserrat-VariableFont_wght.ttf
+/src/components/Raleway-VariableFont_wght.ttf
+/src/components/Logo.jpg
