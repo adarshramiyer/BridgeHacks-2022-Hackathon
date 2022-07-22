@@ -19,6 +19,14 @@
   text-align: center;
 }
 
+.calendar {
+  color: #1fb58f;
+  font-family: Raleway;
+  border: 10px;
+  border-color:#116e2a;
+  font-size: 2px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -27,6 +35,17 @@
 .App-background {
   background-color: #ffffff;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: top;
+  font-size: calc(10px + 2vmin);
+  color: #000000;
+}
+
+.App-background-small {
+  background-color: #ffffff;
+  min-height: 76.75vh;
   display: flex;
   flex-direction: column;
   align-items: left;

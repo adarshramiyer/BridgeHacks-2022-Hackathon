@@ -1,11 +1,33 @@
 import React from "react";
+import { css } from "@emotion/react";
+import {render} from "react-dom";
+import GoogleCalendar from "./GoogleCalendar";
 
-function Calendar() {
-  return (
-    <background className = "App-background">
-      <label>Calendar</label>
-    </background>
-  );
+
+
+let calendars = [
+  {calendarId: CALENDAR_ID, color: "#000000"}
+];
+
+const labelStyle = {
+  width: "70%",
 }
 
-export default Calendar;
+function CalendarPage() {
+    return (
+      <background className = "App-background-small">
+        <table border="3">
+          <tr>
+            <td style={labelStyle}>
+            <GoogleCalendar/>
+            </td>
+            <td>
+              <label>This is my label</label>
+            </td>
+          </tr>
+        </table>
+      </background>
+    )
+}
+
+export default CalendarPage;

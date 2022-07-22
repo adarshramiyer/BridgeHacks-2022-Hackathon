@@ -37,7 +37,7 @@ const imageStyle2 = {
   paddingRight: 0,
   paddingLeft: 10,
   paddingTop: 10,
-  paddingBottom: 10,
+  paddingBottom: 0,
 };
 
 const Navigation = (props) => {
@@ -77,7 +77,7 @@ const Navigation = (props) => {
               <label>Account</label>
             </NavLink>
           </li>
-          <img style={imageStyle2} src={PFP} height={80} width={80} />
+          <img style={imageStyle2} src={PFP} height={49} width={70} />
         </ul>
       </div>
     </Navbar>
