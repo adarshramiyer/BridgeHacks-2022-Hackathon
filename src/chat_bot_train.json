@@ -1,0 +1,31 @@
+{"intents": [
+    {"tag": "greeting",
+        "patterns": ["hi", "hello", "hey", "hola", "sup", "excuse me", "good morning", "good afternoon", "yo", "greetings"],
+        "responses": ["hello", "hi", "how can I help you?", "what can I do for you?"]
+    },
+    {"tag": "goodbye",
+        "patterns": ["bye", "goodbye", "see ya", "see you later", "good night", "take care"],
+        "responses": ["bye", "goodbye", "take care", "have a great day", "come back anytime"]
+    },
+    {"tag": "thanks",
+        "patterns": ["thank you", "thanks", "thnx", "thx", "i couldn't have done it without you"],
+        "responses": ["you're welcome", "no problem", "glad to be of survice", "just let me know if anything comes up", "is there anything else I can help you with?"]
+    },
+    {"tag": "shop",
+        "patterns": ["what is the price?", "how much does meso cost?", "where can I buy meso?", "is meso a subscription?", "price?", "cost?", "money"],
+        "responses": ["Lucky for you, meso is free to use!"]
+    },
+    {"tag": "bot",
+        "patterns": ["what is your name?", "what are you?", "are you a bot?", "are you real?", "are you a person?", "are you a human?"],
+        "responses": ["I am a bot, and I am here to help you with your meso related questions."]
+    },
+    {"tags": "help",
+        "patterns": ["i need help!", "help", "sos", "how do i fix"],
+        "responses": ["can you please tell me more about your problem?", "could you please give me more details about the issue?"]
+    },
+    {"tag": "money",
+        "patterns": ["donate", "support development", "contribute"],
+        "responses": ["Oooh! I like free money!"]
+    }
+
+]}
