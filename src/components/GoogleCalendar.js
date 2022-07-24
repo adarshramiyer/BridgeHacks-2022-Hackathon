@@ -5,6 +5,8 @@ import "./App.css";
 import "@emotion/react";
 
 
+const CLIENT_ID = "";
+const API_KEY = "";
 
 // Authorization scopes required by the API; multiple scopes can be
 // included, separated by spaces.
@@ -13,7 +15,7 @@ const SCOPES = "https://www.googleapis.com/auth/calendar";
 const style = {
   backgroundColor: "#111111",
   marginTop: "30",
-  textSize: "20,"
+  textSize: "20",
 }
 
 
@@ -74,8 +76,10 @@ const GoogleCalendar = () => {
    */
   const initClient = () => {
     if (!localStorage.getItem("access_token")) {
+      console.log("local storage access token not found");
       openSignInPopup();
     } else {
+      console.log("fetching url with api key");
       fetch(
         `https://www.googleapis.com/calendar/v3/calendars/primary/events?key=${API_KEY}&orderBy=startTime&singleEvents=true`,
         {
@@ -108,9 +112,9 @@ const GoogleCalendar = () => {
    * appropriate message is printed.
    */
   const listUpcomingEvents = () => {
-    window.gapi.client.calendar.events
-      .list({
-        calendarId: "primary",
+    console.log("listing upcoming events");
+    window.gapi.client.calendar.events.list({
+        calendarId: "",
         // timeMin: new Date().toISOString(),
         showDeleted: true,
         singleEvents: true,
@@ -142,7 +146,7 @@ const GoogleCalendar = () => {
 
       fetch(
         `https://www.googleapis.com/calendar/v3/calendars/primary/events?key=${API_KEY}&timeMax=${new Date(
-          "Apr 14, 2021"
+          "Apr 16, 2023"
         ).toISOString()}&timeMin=${new Date("Apr 15, 2021").toISOString()}`,
         {
           headers: {
@@ -180,7 +184,6 @@ const GoogleCalendar = () => {
         aspectRatio={2.06}
         expandRows={false}
         style = {style}
-        className = "calendar"
         plugins={[dayGridPlugin]}
         initialView="dayGridMonth"
         events={events}

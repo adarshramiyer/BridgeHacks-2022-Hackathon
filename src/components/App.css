@@ -1,3 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+.App {
+  background: #0e1217;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  text-align: center;
+  color: white;
+}
+ 
+.color-purple {
+  color: #ce3df3;
+}
+
+
 @font-face {
   font-family: Montserrat;
   src: url("./Montserrat-VariableFont_wght.ttf");

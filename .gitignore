@@ -28,3 +28,4 @@ yarn-error.log*
 /src/components/CiscoLogo.png
 /src/components/Logo2.jpg
 /src/components/number_21.jpg
+/src/components/GCalendar.env
