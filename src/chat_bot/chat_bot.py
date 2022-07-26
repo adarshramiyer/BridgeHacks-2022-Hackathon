@@ -4,15 +4,17 @@ from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
 
 import numpy
+
 import tflearn
-import tensorflow as tf
+import tensorflow
 import random
 import json
+
 
 nltk.download('punkt')
 
 # Load the json file
-with open("D:\VScode\BridgeHacks-2022-Hackathon\src\chat_bot_train.json") as file:
+with open("D:\VScode\BridgeHacks-2022-Hackathon\src\chat_bot\chat_bot_train.json") as file:
     data = json.load(file)
 
 # Tokenize the training data
@@ -31,7 +33,7 @@ for intent in data["intents"]:
         if intent["tag"] not in labels:
             labels.append(intent["tag"])
 
-words = [stemmer.stem(w.lower()) for w in words]
+words = [stemmer.stem(w.lower()) for w in words if w != "?"]
 words = sorted(list(set(words)))
 
 labels = sorted(labels)
@@ -39,7 +41,9 @@ labels = sorted(labels)
 training = []
 output = []
 
-out_empty = [0 for _ in range(len(labels)) if w != "?"]
+out_empty = [0 for _ in range(len(labels))]
+
+#doc=nltk.word_tokenize(doc) 
 
 for x, doc in enumerate(docs_x):
     bag = []
@@ -59,14 +63,14 @@ for x, doc in enumerate(docs_x):
 training = numpy.array(training) # Convert to numpy array
 output = numpy.array(output) 
 
-tf.reset_default_graph()
-net = tflearn.input_data(shape=[None, len(training[0])])
+tensorflow.compat.v1.reset_default_graph()
 
+net = tflearn.input_data(shape=[None, len(training[0])])
 net = tflearn.fully_connected(net, 8)
 net = tflearn.fully_connected(net, 8)
-net = tflearn.fully_connected(net, len(output[0]), activation = "softmax")
+net = tflearn.fully_connected(net, len(output[0]), activation="softmax")
 net = tflearn.regression(net)
 
 model = tflearn.DNN(net)
-model.fit(training, output, n_epoch=500, batch_size=8, show_metric=True)
-model.savve("model.tflearn")
+model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
+model.save("model.tflearn")
