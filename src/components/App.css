@@ -1,24 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
- 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
- 
-.App {
-  background: #0e1217;
-  font-family: "Roboto", sans-serif;
-  min-height: 100vh;
-  text-align: center;
-  color: white;
-}
- 
-.color-purple {
-  color: #ce3df3;
-}
+
 
 
 @font-face {
@@ -38,8 +18,344 @@
   font-weight: 500;
 }
 
+.Game-title {
+  font-family: Montserrat;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+
+.game-screen {
+  align-items: center;
+  text-align: center;
+  color:#f24c4e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-image {
+  border: 2px solid #444444;
+}
+
 .App {
   text-align: center;
+}
+
+.mic-button-inactive {
+  padding: 10px;
+  border-width: 0px;
+  border-color:#ffffff;
+  border-radius: 0px;
+  box-shadow: 0px 5px 10px #999999;
+  margin: 10px;
+}
+
+.mic-button-inactive:hover {
+  padding: 10px;
+  border-width: 0px;
+  border-color:#ffffff;
+  border-radius: 0px;
+  box-shadow: 0px 5px 10px #888888;
+}
+
+.mic-button-inactive:active {
+  padding: 10px;
+  border-width: 0px;
+  border-color:#ffffff;
+  border-radius: 0px;
+  box-shadow: 0px 5px 10px #ffffff;
+}
+
+.blank-block {
+  font-size: 10px;
+  height: 0px;
+}
+
+.calendar-column {
+  width: 76vw;
+  padding:0px;
+  left:0;
+  bottom:0;
+  display:flex;
+  flex-direction: column;
+  min-height: 75vh;
+}
+
+.primary-calendar {
+  color:#1fb58f
+}
+
+.deadline-calendar {
+  color: #f24c4e;
+}
+
+.calendar-button {
+  margin-left: 10px;
+  margin-top: 30px;
+  font-family: RalewayLight;
+  border-radius: 20px;
+  border-width: 1px;
+  border-color: #1b7834;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color:#1b7834;
+  color: #ffffff;
+  width: 420px;
+}
+
+.calendar-button:hover {
+  margin-left: 10px;
+  margin-top: 30px;
+  font-family: RalewayLight;
+  border-radius: 20px;
+  border-width: 1px;
+  border-color: #1b7834;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color:#116e2a;
+  color: #ffffff;
+  width: 420px;
+}
+
+.calendar-button:active {
+  margin-left: 10px;
+  margin-top: 30px;
+  font-family: RalewayLight;
+  border-radius: 20px;
+  border-width: 1px;
+  border-color: #1b7834;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color:#ffffff;
+  color: #1b7834;
+  width: 420px;
+}
+
+.calendar-card-dropdown-primary {
+  color: #1fb58f;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: RalewayLight;
+  padding-top:5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+  border-radius: 15px;
+  border-width: 1px;
+  font-size: 20px;
+}
+
+.calendar-card-dropdown-deadlines {
+  color: #f24c4e;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: RalewayLight;
+  padding-top:5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+  border-radius: 15px;
+  border-width: 1px;
+  font-size: 20px;
+}
+
+.calendar-card-description {
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-top:30px;
+  font-family: RalewayLight;
+  padding-top:5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+  border-radius: 15px;
+  border-width: 1px;
+  font-size: 20px;
+  width: 390px;
+  min-height: 50px;
+  max-height: 400px;;
+}
+
+.calendar-card-text {
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 0px;
+  margin-top:10px;
+  font-family: RalewayLight;
+  padding-top:5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+  border-radius: 15px;
+  border-width: 1px;
+  font-size: 30px;
+}
+
+.calendar-card-text-title {
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 0px;
+  margin-top:10px;
+  font-family: RalewayLight;
+  padding-top:5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+  border-radius: 15px;
+  border-width: 1px;
+  font-size: 30px;
+  width: 390px;
+}
+
+.calendar-card-text-small {
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-family: RalewayLight;
+  padding-top:5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+  border-radius: 15px;
+  border-width: 1px;
+  font-size: 20px;
+}
+
+.chatbot-column {
+  width: 1316px;
+  vertical-align: bottom;
+}
+
+.chatbot-table {
+  margin-bottom: 20px;
+}
+
+.Chatbot-input {
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+  width: 1200px;
+  font-family: RalewayLight;
+  padding-top:5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+  border-radius: 15px;
+  border-width: 1px;
+  font-size: 30px;
+}
+
+.senderID {
+  font-family: Montserrat;
+  font-size: 20px;
+  color: black;
+
+}
+
+.calendar-table {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.resources-card {
+  padding: 20px;
+  margin-right: 50px;
+  background-color: #f5dea3;
+  border-radius: 30px;
+  box-shadow: 0px 5px 10px #999999;
+  font-family: RalewayLight;
+  text-align: center;
+  max-width: 500px;
+  color: #444444;
+}
+
+.resources-card-outline {
+  margin-right: 50px;
+  margin-bottom: 30px;
+
+}
+
+.calendar-card {
+  padding: 20px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0px 5px 10px #999999;
+  font-family: RalewayLight;
+  text-align: left;
+  max-width: 500px;
+  color: #444444;
+}
+
+.calendar-card-bottom {
+  padding: 20px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  font-family: RalewayLight;
+  text-align: center;
+  max-width: 500px;
+  color: #444444;
+}
+
+.calendar-card-outline {
+  margin-right: 50px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+
+}
+
+.App-calendar {
+  font-family: Montserrat;
+  color:#116e2a;
+  background-color: #000000;
+  height: 100vh;
+}
+
+.bot-message {
+  font-family: RalewayLight;
+  font-size: 30px;
+  background-color: #eab126;
+  padding-top:5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+}
+
+.you-message {
+  font-family: RalewayLight;
+  font-size: 30px;
+  background-color: #1b7834;
+  padding-top:5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+
 }
 
 .calendar {
@@ -60,8 +376,31 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   justify-content: top;
+  font-size: calc(10px + 2vmin);
+  color: #000000;
+}
+
+.App-background-center {
+  background-color: #ffffff;
+  min-height: 76.75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: center;
+  justify-content: flex-end;
+  font-size: calc(10px + 2vmin);
+  color: #000000;
+}
+
+.App-background-chatbot {
+  background-color: #ffffff;
+  min-height: 76.75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
   font-size: calc(10px + 2vmin);
   color: #000000;
 }
@@ -77,6 +416,28 @@
   color: #000000;
 }
 
+.App-background-small-yellow {
+  background-color: #eab126;
+  min-height: 76.75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  font-size: calc(10px + 2vmin);
+  color: #000000;
+}
+
+.App-background-small-gradient {
+  background: linear-gradient(90deg, rgba(234,177,38,1) 5%, rgba(242,76,78,1) 100%);
+  min-height: 76.75vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: top;
+  font-size: calc(10px + 2vmin);
+  color: #000000;
+}
+
 .header {
   left: 0;
   top: 0;
@@ -86,6 +447,24 @@
   box-shadow: 0px 5px 10px #999999;
   font-family: RalewayLight;
   font-size: 50px;
+}
+
+.Send-button {
+  border-width: 0px;
+  background-color: #ffffff;
+  filter: opacity(90%) grayscale(10%);
+}
+
+.Send-button:hover {
+  border-width: 0px;
+  background-color: #ffffff;
+  filter: opacity(100%) grayscale(10%);
+}
+
+.Send-button:active {
+  border-width: 0px;
+  background-color: #ffffff;
+  filter: opacity(100%);
 }
 
 .App-header-list {

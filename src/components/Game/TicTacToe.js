@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router";
+import Image from "./game 1.png";
 
 function Game() {
   let { postSlug } = useParams();
@@ -9,20 +10,10 @@ function Game() {
   }, [postSlug]);
 
   return (
-    <background className = "App-background">
+    <background className = "App-background-small-yellow">
     <div className="home">
-      <div className="container">
-        <h1 className="mt-5">This is Game JS</h1>
-        <h6 className="mb-5">The slug is, {postSlug}</h6>
-        <p>
-          Area 1
-        </p>
-        <p>
-          Area 2
-        </p>
-        <p>
-          Area 3
-        </p>
+      <div className="App-background-small-yellow">
+        <img src={Image} width="1300" className="game-image"/>
       </div>
     </div>
     </background>
