@@ -33,6 +33,21 @@
          "patterns": ["donate", "support development", "contribute"],
          "responses": ["Oooh! I like free money!"],
          "context_set": ""
+        },
+        {"tag": "background check",
+         "patterns": ["Should I do an employee background check?", "Do they need a background check?", "Who needs a background check?"],
+         "responses": ["If they have any acces to our systems, they will need a background check."],
+         "context_set":""
+        },
+        {"tag": "meal breaks",
+         "patterns": ["Should I have meal breaks?", "Do I need meal breaks?", "What are the laws regarding breaks and meal periods?"],
+         "responses": ["If you are working a six or more hour shift, then you will need a meal break by law."],
+         "context_set":""
+        },
+        {"tag": "Can I require employees to use direct deposit?",
+         "patterns": ["Can I require employees to use direct deposit?", "are direct deposits requierd?"],
+         "responses": ["Yes, direct deposits are required for all employees. Meso will not pay wages in check or cash"],
+         "context_set":""
         }
    ]
 }
