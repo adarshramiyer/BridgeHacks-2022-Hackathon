@@ -6,8 +6,10 @@ import "./App.css";
 import IMAGE from "./mic_button.jpg"
 import IMAGE2 from "./mic_button_green.jpg";
 import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
+import { gapi } from "gapi-script";
+import ApiCalendar from 'react-google-calendar-api';
 
-//API INFORMATION
+
 
 let styles = {
   calendar: {
@@ -17,10 +19,8 @@ let styles = {
   },
 
   today: css`
-    /* highlight today by making the text red and giving it a red border */
     color: #eab126;
-    border: 1px solid #eab126;
-    background-color: "#000000";
+    border: 1px solid #eab126;;
   `,
 };
 
@@ -31,12 +31,17 @@ const calendarStyle = {
 
 const language = "EN";
 
+const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
 function CalendarPage() {
   const { transcript, resetTranscript } = useSpeechRecognition();
   const [isListening, setIsListening] = useState(false);
-  const microphoneRef = useRef(null);
 
   const [inputs, setInputs] = useState("");
+
+  const [NLPOutput, setNLPOutput] = useState("");
 
   const handleChange = (event) => {
     var name = event.target.name;
@@ -44,10 +49,61 @@ function CalendarPage() {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
+  var isSignedIn = false;
+
+  const handleLogin = () => {
+    isSignedIn = true;
+    console.log(apiCalendar.handleAuthClick());
+    
+  }
+
+  
+
   const handleSubmit = (event) => {
     event.preventDefault();
     //ADD EVENT TO CALENDAR
+    
+    var addCalendarId = ;
+    var eventInfo = [];
+    
+    apiCalendar.setCalendar(addCalendarId);
+    if (inputs.calendar == "deadlines") {
+      addCalendarId = CALENDAR_ID;
+      apiCalendar.setCalendar(CALENDAR_ID);
+    }
+
+    var eventInfo = {
+      summary: inputs.title,
+      //description: inputs.description,
+      location: "",
+      start: {
+        dateTime: (inputs.startDate + "T" + inputs.startTime + ":00" + "-07:00"),
+        timeZone: "America/Los_Angeles",
+      },
+      end: {
+        dateTime: (inputs.endDate + "T" + inputs.endTime + ":00" + "-07:00"),
+        timeZone: "America/Los_Angeles",
+      }
+    }
+    //console.log("will call addEvent()");
+    addEvent(eventInfo, addCalendarId);
+    
   };
+
+  const addEvent = (eventInformation, calendarID) => {
+    //console.log(calendarID);
+    //console.log("In addEvent()");
+    //console.log(apiCalendar);
+    //console.log(JSON.stringify(eventInformation));
+    //console.log(apiCalendar.listEvents());
+    apiCalendar.createEvent(eventInformation).then(({ result }) => {
+      console.log(result);
+      });
+    //console.log(eventInformation);
+      
+  };
+
+
 
   const handleListing = () => {
     resetTranscript();
@@ -63,7 +119,68 @@ function CalendarPage() {
     //microphoneRef.current.classList.remove("listening");
     SpeechRecognition.stopListening();
     console.log(transcript);
+    getNLPDetails(transcript);
+    
   };
+
+  const getNLPDetails = async (speech_text) => {
+    console.log(speech_text);
+    await fetch(, {
+      method: "POST",
+      body: JSON.stringify({
+        "message": speech_text,
+      }),
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data["Title"]);
+        setNLPOutput((values) => [data, ...values]);
+        console.log(NLPOutput);
+
+        var eventInfo = {
+          summary: data["Title"],
+          //description: inputs.description,
+          location: "",
+          start: {
+            dateTime: (data["Start_Date_Time"] + "-07:00"),
+            timeZone: "America/Los_Angeles",
+          },
+          end: {
+            dateTime: (data["End_Date_Time"] + "-07:00"),
+            timeZone: "America/Los_Angeles",
+          }
+        }
+        //console.log("will call addEvent()");
+        addEvent(eventInfo, "hackathongroup21@gmail.com");
+        
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+
+      console.log(JSON.stringify(NLPOutput));
+
+
+      /*var eventInfo = {
+        summary: NLPOutput["0"]["Title"],
+        //description: inputs.description,
+        location: "",
+        start: {
+          dateTime: (NLPOutput["0"]["Start_Date_Time"] + "-07:00"),
+          timeZone: "America/Los_Angeles",
+        },
+        end: {
+          dateTime: (NLPOutput["0"]["End_Date_Time"] + "-07:00"),
+          timeZone: "America/Los_Angeles",
+        }
+      }
+      //console.log("will call addEvent()");
+      addEvent(eventInfo, "hackathongroup21@gmail.com");*/
+
+  }
 
   return (
     <div className="App-background-small">
@@ -83,9 +200,14 @@ function CalendarPage() {
           <td>
             <table border="0" className="calendar-card-outline">
               <tr>
+                <td className="calendar-card-bottom">
+                </td>
+              </tr>
+              <tr>
                 {" "}
                 <td className="calendar-card">
                   <label style={{ fontWeight: "bold" }}>Create an Event</label>
+                  <button onClick={handleLogin} className="calendar-button-narrow"  disabled = {isSignedIn}>Sign In</button>
                   <br />
 
                   <form onSubmit={handleSubmit}>
@@ -137,31 +259,6 @@ function CalendarPage() {
                     />
 
                     <br />
-                    <textarea
-                      id="description"
-                      className="calendar-card-description"
-                      type="text"
-                      name="description"
-                      placeholder="Description"
-                      value={inputs.description || ""}
-                      onChange={handleChange}
-                    />
-
-                    <br />
-
-
-                    <label className="calendar-card-text-small">Repeat: </label>
-                    <select
-                      className="calendar-card-text-small"
-                      id="repeatEvent"
-                      name="repeatEvent"
-                      value={inputs.repeatEvent || ""}
-                      onChange={handleChange}
-                    >
-                      <option value="never">Never</option>
-                      <option value="daily">Daily</option>
-                    </select>
-                    <br/>
 
                     <label className="calendar-card-text-small">Calendar:</label>
                     <select
@@ -176,9 +273,12 @@ function CalendarPage() {
                     </select>
                     <br/>
 
-                    <input id = "submitButton" type="submit" className="calendar-button" value="Create" />
+                    
+
+                    <input id = "submitButton" type="submit" className="calendar-button" value="Create"/>
 
                   </form>
+                  
                 </td>
               </tr>
               <tr>

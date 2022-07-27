@@ -135,6 +135,48 @@
   width: 420px;
 }
 
+.calendar-button-narrow {
+  margin-left: 30px;
+  margin-top: 0px;
+  font-family: RalewayLight;
+  border-radius: 20px;
+  border-width: 1px;
+  border-color: #1b7834;
+  padding: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color:#1b7834;
+  color: #ffffff;
+}
+
+.calendar-button-narrow:hover {
+  margin-left: 30px;
+  margin-top: 0px;
+  font-family: RalewayLight;
+  border-radius: 20px;
+  border-width: 1px;
+  border-color: #1b7834;
+  padding: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color:#116e2a;
+  color: #ffffff;
+}
+
+.calendar-button-narrow:active {
+  margin-left: 30px;
+  margin-top: 0px;
+  font-family: RalewayLight;
+  border-radius: 20px;
+  border-width: 1px;
+  border-color: #1b7834;
+  padding: 0px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color:#ffffff;
+  color: #1b7834;
+}
+
 .calendar-card-dropdown-primary {
   color: #1fb58f;
   align-items: center;
