@@ -12,10 +12,13 @@ import json
 import pickle
 import os
 
+#os.add_dll_directory("C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.7\bin")
 nltk.download('punkt')
 
+verbose=1
+
 # Load the json file
-with open("chat_bot_train.json") as file:
+with open("D:\VScode\BridgeHacks-2022-Hackathon\src\chat_bot\chat_bot_train.json") as file:
     data = json.load(file)
 try:
     with open("data.pickle", "rb") as f:
@@ -114,8 +117,8 @@ def chat():
             for tg in data["intents"]:
                 if tg["tag"] == tag:
                     responses = tg["responses"]
-            print(random.choice(responses))
+            print(f"MesoBot: {random.choice(responses)}")
         else:
             print("I didn't understand that, try again.")
 
-chat()
+#chat()
