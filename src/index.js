@@ -13,7 +13,8 @@ import {
   Games,
   TicTacToe,
   NeverHaveIEver,
-  WouldYouRather
+  WouldYouRather,
+  TwoTruths,
 } from "./components";
 
 
@@ -29,6 +30,7 @@ ReactDOM.render(
           <Route path="/game/tic-tac-toe" element={<TicTacToe />} />
           <Route path="/game/would-you-rather" element={<WouldYouRather />} />
           <Route path="/game/never-have-i-ever" element={<NeverHaveIEver />} />
+          <Route path="/game/two-truths-and-a-lie" element={<TwoTruths />} />
       </Route>
     </Routes>
     <Footer />

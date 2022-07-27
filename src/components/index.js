@@ -8,3 +8,4 @@ export { default as Games } from "./Game/Games";
 export { default as TicTacToe } from "./Game/TicTacToe";
 export { default as WouldYouRather } from "./Game/Would_You_Rather";
 export { default as NeverHaveIEver } from "./Game/Never_Have_I_Ever";
+export { default as TwoTruths } from "./Game/Two_Truths_And_A_Lie";

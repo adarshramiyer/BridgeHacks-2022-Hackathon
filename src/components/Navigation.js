@@ -64,7 +64,7 @@ const Navigation = (props) => {
           </li>
           <li className="App-header-list">
             <NavLink className="header-links" to="/game">
-              Game
+              Team Bonding
             </NavLink>
           </li>
           <li className="App-header-list">

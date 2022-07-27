@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ticTacToeImage from "./game 1.png";
 import wouldYouImage from "./game 2.png";
 import neverImage from "./game 3.png";
+import TwoImage from "./game 4.png";
 
 const imageStyle = {
   paddingLeft: "100",
@@ -38,6 +39,15 @@ function Games() {
                 <div className="">
                   <div className="">
                     <img src={neverImage} width="500" style={imageStyle} className="game-image" />
+                  </div>
+                </div>
+              </Link>
+            </td>
+            <td>
+              <Link to="/game/two-truths-and-a-lie">
+                <div className="" style={imageStyle}>
+                  <div className="">
+                    <img src={TwoImage} width="500" className="game-image"/>
                   </div>
                 </div>
               </Link>

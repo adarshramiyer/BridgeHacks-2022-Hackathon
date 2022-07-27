@@ -31,9 +31,6 @@ const calendarStyle = {
 
 const language = "EN";
 
-const sleep = (milliseconds) => {
-  return new Promise(resolve => setTimeout(resolve, milliseconds))
-}
 
 function CalendarPage() {
   const { transcript, resetTranscript } = useSpeechRecognition();
@@ -99,6 +96,7 @@ function CalendarPage() {
     apiCalendar.createEvent(eventInformation).then(({ result }) => {
       console.log(result);
       });
+    //window.location.reload(false);
     //console.log(eventInformation);
       
   };
