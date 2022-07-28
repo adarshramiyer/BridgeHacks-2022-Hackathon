@@ -1,4 +1,4 @@
-# Meso: BridgeHacks 2022
+# Meso: Cisco BridgeHacks 2022
 
 According to Steve Prentice, Director of Software Development at Cisco, 98% of post-covid meetings will have at least one remote participant. And Mithun Baphana, Senior Product Manager at Cisco, says that this poses a serious challenge to companies trying to retain talent and build an inclusive work environment. It is also difficult for employees to manage several unconnected resources.
 
