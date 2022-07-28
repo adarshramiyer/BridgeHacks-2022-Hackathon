@@ -9,9 +9,11 @@ Meso is your one-stop-shop to efficient, connected, and memorable hybrid work. M
 This is achieved through three features:
 
 **Calendar**
+
 Meso incorporates an intuitive calendar page which utilizes the Google Calendar API for portability. Additionally, we support convenient voice scheduling using speech-to-text and Natural Language Processing.
 
 **Employee Resources**
+
 Our Natural Language Processing Chatbot, SunShine, helps employees with routine People and Communities tasks and mental health concerns. We believe that this technology helps People and Communities focus on driving business strategy and delivering shareholder value.
 
 **Team Bonding**
